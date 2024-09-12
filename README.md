@@ -8,4 +8,4 @@ https://www.kaggle.com/competitions/learning-agency-lab-automated-essay-scoring-
 ### 评估方式
 * 提交的内容根据二次加权 kappa 进行评分，该 kappa 衡量两个结果之间的一致性。此量度通常从 0（随机一致性）到 1（完全一致性）不等。如果偶然的一致性低于预期，则指标可能会低于 0。 二次加权 kappa 的计算方法如下。首先，构造一个 N x N 直方图矩阵 O，使得 Oi，j 对应于接收预测值 j 的 s i（实际）的数量。权重的 N×N 矩阵 w 是根据实际值和预测值之间的差异计算的；
 根据这三个矩阵，二次加权 kappa 计算如下：
-$ \kappa = 1 - \frac{\sum_{i,j} w_{i,j} O_{i,j}}{\sum_{i,j} w_{i,j} E_{i,j}} $
+$$\kappa = 1 - \frac{\sum_{i,j} w_{i,j} O_{i,j}}{\sum_{i,j} w_{i,j} E_{i,j}}$$
