@@ -1,3 +1,13 @@
 # Kaggle竞赛---作文评分任务[NLP]
 ### Learning Agency Lab - Automated Essay Scoring 2.0
- Kaggle aes2 , https://www.kaggle.com/competitions/learning-agency-lab-automated-essay-scoring-2
+https://www.kaggle.com/competitions/learning-agency-lab-automated-essay-scoring-2
+
+###项目描述
+本次比赛的目标是训练一个模型来为学生论文评分。自动写作评估 （AWE） 系统可以对论文进行评分，以补充教育工作者的其他工作。AWE 还允许学生定期和及时地收到有关他们写作的反馈。然而，由于成本高昂，该领域的许多进步并未被广泛提供给学生和教育工作者。需要开源解决方案来评估学生写作，才能使用这些重要的教育工具覆盖每个社区。以前开发开源 AWE 的努力受到小型数据集的限制，这些数据集在全国范围内不多样化或不专注于常见的论文格式。第一届自动作文评分比赛对学生写的简答题进行评分，然而，这是一项在课堂上不经常使用的写作任务。为了改进早期的努力，需要一个更广泛的数据集，其中包括高质量、逼真的课堂写作样本。
+
+###评估方式
+提交的内容根据二次加权 kappa 进行评分，该 kappa 衡量两个结果之间的一致性。此量度通常从 0（随机一致性）到 1（完全一致性）不等。如果偶然的一致性低于预期，则指标可能会低于 0。 二次加权 kappa 的计算方法如下。首先，构造一个 N x N 直方图矩阵 O，使得 Oi，j 对应于接收预测值 j 的 s i（实际）的数量。权重的 N×N 矩阵 w 是根据实际值和预测值之间的差异计算的；
+根据这三个矩阵，二次加权 kappa 计算如下：
+$$
+\kappa = 1 - \frac{\sum_{i,j} w_{i,j} O_{i,j}}{\sum_{i,j} w_{i,j} E_{i,j}}
+$$
